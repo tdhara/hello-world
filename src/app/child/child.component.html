@@ -1,0 +1,11 @@
+<hr>
+<p>
+  child Component!
+</p>
+<input type="text" #ccomponent (keyup)="onChange(ccomponent.value)">
+<p>value of Parent Component is: {{abc}} </p>
+
+<button (click)="increment()">(++)</button>
+
+<button (click)="decrement()">(--)</button>
+<span>{{counter}}</span>

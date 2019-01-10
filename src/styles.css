@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900');
+
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, sans-serif;  
+  }
+
+.done {    
+    position: fixed;    
+    bottom: 20px;    
+    right: 20px;    
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+} 
+
+.super_container {
+    min-height: 100%; 
+    min-height: 100%;
+    margin-bottom: -100px; 
+    padding: 79px;
+}
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.docs-footer{
+    height: 50px;
+}
+.docs-navbar-header{
+    overflow: hidden;
+    padding: 20px 10px;
+}

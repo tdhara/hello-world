@@ -1,0 +1,10 @@
+<p>
+  parent component
+</p>
+<input type="text" #pcomponent (keyup)="0">
+<p>Value of child component is: {{CData}}</p>
+view child:
+<input #someInput placeholder="hello everyone">
+<app-child [abc]="pcomponent.value" (childEvent)="CData=$event"></app-child>
+
+

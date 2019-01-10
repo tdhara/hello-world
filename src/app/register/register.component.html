@@ -1,0 +1,108 @@
+   
+<mat-card>    
+    <!-- Title of an Card -->    
+    <mat-card-title>    
+        Register yourself first !!
+    </mat-card-title> 
+    <mat-card-content>    
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">    
+            <table>    
+                <tr>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput minlength="3" placeholder="First Name" formControlName="first_name" autocomplete="off">    
+                        </mat-form-field>
+                        <div *ngIf="submitted && f.first_name.errors">
+                            <div *ngIf="f.first_name.errors.required">First Name is required</div>                            
+                            <div *ngIf="f.first_name.errors.minlength">First name must be at least 3 characters</div>
+                        </div>  
+                    </td>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Last Name" formControlName="last_name" autocomplete="off">                             
+                        </mat-form-field> 
+                        <div *ngIf="submitted && f.last_name.errors">
+                                <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                                <div *ngIf="f.last_name.errors.minlength">Last Name must be at least 3 characters</div>
+                        </div>   
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <textarea matInput placeholder="Address" formControlName="address" autocomplete="off" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>    
+                        </mat-form-field>    
+                    </td>    
+                </tr>
+                <tr>
+                  <td colspan="2">
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Email" formControlName="email" autocomplete="off">    
+                        </mat-form-field> 
+                        <div *ngIf="submitted && f.email.errors">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">Please enter a valid Email</div>
+                        </div>
+                  </td>
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="birth_date" autocomplete="off">    
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>    
+                            <mat-datepicker touchUi="true" #picker></mat-datepicker>    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td>    
+                        <span>Gender</span><br><br>    
+                        <mat-radio-group formControlName="gender">    
+                            <mat-radio-button value="1">Male</mat-radio-button>    
+                            <mat-radio-button value="2">Female</mat-radio-button>    
+                        </mat-radio-group>    
+                    </td>    
+                    <td>
+                        <mat-slide-toggle fromControlName="admission">Have done admission before?</mat-slide-toggle>    
+                           
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td>    
+                        <mat-form-field>    
+                            <mat-select formControlName="university" placeholder="Select university">    
+                                <mat-option >-- Select Any --</mat-option>    
+                                <mat-option value="1">WBUT</mat-option>    
+                                <mat-option value="2">JADAVPUR</mat-option>    
+                                <mat-option value="3">IIEST</mat-option>
+                                <mat-option value="3">KALYANI</mat-option>    
+                            </mat-select>    
+                        </mat-form-field> 
+                    </td>  
+                    <td>    
+                        <mat-form-field>    
+                            <mat-select placeholder="Select college" formControlName="college">    
+                                <mat-option>-- Select Any --</mat-option>    
+                                <mat-option value="1">ABCD</mat-option>    
+                                <mat-option value="2">SDFG</mat-option>    
+                                <mat-option value="3">POKJ</mat-option>
+                                <mat-option value="3">BNMJ</mat-option>    
+                            </mat-select>    
+                        </mat-form-field> 
+                    </td>  
+                </tr>    
+                <tr>    
+                    <td colspan="2">    
+    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2" class="content-center">    
+                        <button type="submit" mat-raised-button color="accent">Submit</button>    
+                        <button mat-raised-button color="accent" onclick="reset()">Clear</button>    
+                    </td>    
+                </tr>    
+            </table>    
+        </form>    
+    </mat-card-content>    
+</mat-card> 
